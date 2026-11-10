@@ -91,3 +91,4 @@ e2e-tests/screenshots/
 smart-community-backend/sql/test_data_batch*.sql
 smart-community-backend/sql/import_all_portable.bat
 e2e-tests/tests/15-tenant.spec.ts
+PACKAGE-MANIFEST.json
