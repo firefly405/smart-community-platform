@@ -1,0 +1,107 @@
+server:
+  port: 8001
+
+spring:
+  config:
+    import: optional:file:${AI_RUNTIME_CONFIG:.runtime/ai-config.properties}
+
+  application:
+    name: smart-community-admin
+
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
+      - org.springframework.boot.autoconfigure.data.redis.RedisRepositoriesAutoConfiguration
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/${MYSQL_DATABASE:smart_community}?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: ${MYSQL_USERNAME:smartcommunity}
+    password: ${MYSQL_PASSWORD:}
+
+  servlet:
+    multipart:
+      max-file-size: 2MB
+      max-request-size: 2MB
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password: 
+      database: 0
+      timeout: 10s
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 8
+          min-idle: 0
+          max-wait: -1ms
+
+  ai:
+    openai:
+      api-key: ${AI_API_KEY:disabled}
+      base-url: ${AI_PROVIDER_BASE_URL:https://api.openai.com}
+      chat:
+        enabled: ${AI_ENABLED:false}
+        options:
+          model: ${AI_CHAT_MODEL:gpt-4o-mini}
+      embedding:
+        enabled: ${AI_EMBEDDING_ENABLED:false}
+        options:
+          model: ${AI_EMBEDDING_MODEL:text-embedding-3-small}
+      image:
+        enabled: false
+      audio:
+        transcription:
+          enabled: false
+        speech:
+          enabled: false
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  type-aliases-package: com.smartcommunity.**.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+jwt:
+  secret: ${JWT_SECRET:}
+  expiration: 86400000
+
+knife4j:
+  enable: true
+  openapi:
+    title: 智慧社区综合管理平台 API文档
+    description: 智慧社区综合管理平台后端接口文档
+    version: 1.0.0
+    contact:
+      name: Smart Community Team
+
+app:
+  upload-dir: ${UPLOAD_DIR:uploads}
+  ai-runtime-config: ${AI_RUNTIME_CONFIG:.runtime/ai-config.properties}
+  ai-api-url: ${AI_API_URL:}
+  ai-api-key: ${AI_API_KEY:}
+
+# 支付通道隔离配置
+# mode=mock  → 使用本地模拟支付（演示默认，非真实资金）
+# mode=real  → 预留真实通道（未对接前会拒绝支付）
+# mock.enabled=false 可在预发/生产禁止一切模拟支付
+payment:
+  mode: ${PAYMENT_MODE:mock}
+  mock:
+    enabled: ${PAYMENT_MOCK_ENABLED:true}
+    trade-no-prefix: ${PAYMENT_MOCK_PREFIX:MOCK}
+    default-pay-method: 9
+
+logging:
+  level:
+    com.smartcommunity: debug
+    org.springframework: info

@@ -1,0 +1,93 @@
+### IntelliJ IDEA ###
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+.kotlin
+.idea/
+*.iml
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code / Cursor / JetBrains extras ###
+.vscode/
+.cursor/
+.idea/
+*.iml
+.uploads/
+.reasonix/
+
+### Mac OS ###
+.DS_Store
+
+### Unrelated / local scratch (repo root only) ###
+/src/
+/cs2-external/
+/src/Main.java
+/功能结构图.html
+
+### Node / Frontend ###
+node_modules/
+dist/
+dist-ssr/
+*.local
+.vite/
+node/
+
+### Maven / Java ###
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!.mvn/wrapper/maven-wrapper.properties
+*.class
+*.jar
+!**/lib/*.jar
+*.war
+*.ear
+*.nar
+hs_err_pid*
+
+### Logs ###
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+### Environment ###
+.env
+.env.local
+.env.*.local
+.runtime/
+
+### Test artifacts ###
+test-results/
+playwright-report/
+playwright/.cache/
+e2e-tests/test-results/
+
+### OS ###
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+e2e-tests/screenshots/
+smart-community-backend/sql/test_data_batch*.sql
+smart-community-backend/sql/import_all_portable.bat
+e2e-tests/tests/15-tenant.spec.ts

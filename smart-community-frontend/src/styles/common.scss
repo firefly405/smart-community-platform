@@ -1,0 +1,194 @@
+:root {
+  --primary-color: #176b5b;
+  --success-color: #67c23a;
+  --warning-color: #e6a23c;
+  --danger-color: #f56c6c;
+  --info-color: #909399;
+  --text-color-primary: #303133;
+  --text-color-regular: #606266;
+  --text-color-secondary: #909399;
+  --border-color: #dcdfe6;
+  --bg-color: #f4f6f8;
+  --sidebar-width: 200px;
+  --header-height: 60px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: var(--text-color-primary);
+  background-color: var(--bg-color);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+// 通用工具类
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mt-10 { margin-top: 10px; }
+.mt-20 { margin-top: 20px; }
+.mb-10 { margin-bottom: 10px; }
+.mb-20 { margin-bottom: 20px; }
+.ml-10 { margin-left: 10px; }
+.mr-10 { margin-right: 10px; }
+.p-10 { padding: 10px; }
+.p-20 { padding: 20px; }
+
+// 业务页面统一视觉。页面自身只负责业务结构，共享层负责密度、层级和响应式。
+.page-container {
+  min-width: 0;
+}
+
+.page-container > .el-card,
+.page-container > .el-row,
+.dashboard > .el-row {
+  min-width: 0;
+}
+
+.el-card {
+  --el-card-border-radius: 6px;
+  border-color: #e2e7ec;
+}
+
+.el-card__header {
+  padding: 15px 18px;
+  color: #273444;
+  font-weight: 600;
+}
+
+.el-dialog {
+  max-width: calc(100vw - 24px);
+  border-radius: 7px;
+}
+
+.el-dialog__header {
+  padding-bottom: 14px;
+  border-bottom: 1px solid #edf0f2;
+}
+
+.el-dialog__footer {
+  padding-top: 14px;
+  border-top: 1px solid #edf0f2;
+}
+
+.el-statistic__head {
+  color: #667085;
+  font-size: 13px;
+}
+
+.el-statistic__number {
+  color: #1f2937;
+  font-weight: 650;
+}
+
+.report-grid,
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.stat-panel {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid #e2e7ec;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.chart-panel {
+  min-width: 0;
+  padding: 0;
+}
+
+.chart-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: #273444;
+  font-weight: 600;
+}
+
+@media (max-width: 1000px) {
+  .report-grid,
+  .stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 720px) {
+  .report-grid,
+  .stat-grid,
+  .chart-grid { grid-template-columns: 1fr; }
+  .el-card__body { padding: 14px; }
+  .el-dialog { width: calc(100vw - 24px) !important; }
+  .el-dialog .el-form-item { display: block; }
+  .el-dialog .el-form-item__label { width: auto !important; margin-bottom: 6px; }
+  .el-dialog .el-form-item__content { margin-left: 0 !important; }
+}
+
+// 滚动条样式
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

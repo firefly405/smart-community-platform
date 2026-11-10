@@ -1,0 +1,18 @@
+SET NAMES utf8mb4;
+START TRANSACTION;
+UPDATE social_secondhand SET images=JSON_ARRAY('/uploads/community/d30f8a11-5b89-4f07-8d0f-000000000001.jpg') WHERE item_no='ES202503001' AND deleted=0 AND (images IS NULL OR TRIM(images) IN ('', '[]', 'null'));
+UPDATE social_secondhand SET images=JSON_ARRAY('/uploads/community/d30f8a11-5b89-4f07-8d0f-000000000002.jpg') WHERE item_no='ES202503002' AND deleted=0 AND (images IS NULL OR TRIM(images) IN ('', '[]', 'null'));
+UPDATE social_secondhand SET images=JSON_ARRAY('/uploads/community/d30f8a11-5b89-4f07-8d0f-000000000003.jpg') WHERE item_no='ES202503003' AND deleted=0 AND (images IS NULL OR TRIM(images) IN ('', '[]', 'null'));
+UPDATE social_secondhand SET images=JSON_ARRAY('/uploads/community/d30f8a11-5b89-4f07-8d0f-000000000004.jpg') WHERE item_no='ES202502001' AND deleted=0 AND (images IS NULL OR TRIM(images) IN ('', '[]', 'null'));
+UPDATE social_secondhand SET images=JSON_ARRAY('/uploads/community/d30f8a11-5b89-4f07-8d0f-000000000005.jpg') WHERE item_no='ES202502002' AND deleted=0 AND (images IS NULL OR TRIM(images) IN ('', '[]', 'null'));
+UPDATE social_secondhand SET images=JSON_ARRAY('/uploads/community/d30f8a11-5b89-4f07-8d0f-000000000006.jpg') WHERE item_no='ES202502003' AND deleted=0 AND (images IS NULL OR TRIM(images) IN ('', '[]', 'null'));
+UPDATE social_secondhand SET images=JSON_ARRAY('/uploads/community/d30f8a11-5b89-4f07-8d0f-000000000007.jpg') WHERE item_no='ES202501001' AND deleted=0 AND (images IS NULL OR TRIM(images) IN ('', '[]', 'null'));
+UPDATE social_secondhand SET images=JSON_ARRAY('/uploads/community/d30f8a11-5b89-4f07-8d0f-000000000008.jpg') WHERE item_no='ES202503004' AND deleted=0 AND (images IS NULL OR TRIM(images) IN ('', '[]', 'null'));
+UPDATE social_secondhand SET images=JSON_ARRAY('/uploads/community/d30f8a11-5b89-4f07-8d0f-000000000009.jpg') WHERE item_no='ES202503005' AND deleted=0 AND (images IS NULL OR TRIM(images) IN ('', '[]', 'null'));
+UPDATE social_secondhand SET images=JSON_ARRAY('/uploads/community/d30f8a11-5b89-4f07-8d0f-000000000010.jpg') WHERE item_no='ES202503006' AND deleted=0 AND (images IS NULL OR TRIM(images) IN ('', '[]', 'null'));
+UPDATE social_secondhand SET images=JSON_ARRAY('/uploads/community/d30f8a11-5b89-4f07-8d0f-000000000011.jpg') WHERE item_no='ES202501002' AND deleted=0 AND (images IS NULL OR TRIM(images) IN ('', '[]', 'null'));
+UPDATE social_secondhand SET images=JSON_ARRAY('/uploads/community/d30f8a11-5b89-4f07-8d0f-000000000012.jpg') WHERE item_no='ES202412001' AND deleted=0 AND (images IS NULL OR TRIM(images) IN ('', '[]', 'null'));
+UPDATE social_secondhand SET images=JSON_ARRAY('/uploads/community/d30f8a11-5b89-4f07-8d0f-000000000013.jpg') WHERE item_no='ES202411001' AND deleted=0 AND (images IS NULL OR TRIM(images) IN ('', '[]', 'null'));
+UPDATE social_secondhand SET images=JSON_ARRAY('/uploads/community/d30f8a11-5b89-4f07-8d0f-000000000014.jpg') WHERE item_no='ES202412002' AND deleted=0 AND (images IS NULL OR TRIM(images) IN ('', '[]', 'null'));
+UPDATE social_secondhand SET images=JSON_ARRAY('/uploads/community/d30f8a11-5b89-4f07-8d0f-000000000015.jpg') WHERE item_no='ES202410001' AND deleted=0 AND (images IS NULL OR TRIM(images) IN ('', '[]', 'null'));
+COMMIT;

@@ -1,0 +1,21 @@
+{
+  "JDK 17": { "name": "Java 开发环境 JDK 17", "action": "安装 JDK 17 并设置 JAVA_HOME 或 PATH。其他 Java 主版本不能替代本工程的 Java 17 预览特性运行配置。" },
+  "Node.js 18+": { "name": "Node.js 18 及以上", "action": "安装 Node.js 并重新打开启动器；本项目已验证的基线为 Node.js 20。" },
+  "npm": { "name": "npm 包管理工具", "action": "随 Node.js 安装 npm。安装依赖 npm ci、编译前端需要它；已有完整依赖可直接运行 Vite。" },
+  "Windows PowerShell": { "name": "Windows PowerShell", "action": "使用 Windows PowerShell 5.1 或更高版本。" },
+  "Project source/configuration": { "name": "项目源码和配置文件", "action": "完整解压压缩包，保留前后端模块目录；不要在 ZIP 预览窗口内启动。" },
+  "Frontend dependencies / native module": { "name": "前端依赖及本机原生模块", "action": "在 smart-community-frontend 目录运行 npm ci。检测包括 Vite、Vue、Element Plus 及 esbuild 原生转换，排查跨系统依赖不兼容。" },
+  "Backend JAR": { "name": "后端可运行 JAR", "action": "缺失或源码较新时，启动器需借助 Maven 重新编译；未缓存的依赖可能需要联网下载。已有运行服务不会被擅自重启。" },
+  "Maven 3.9+": { "name": "Maven 3.9 及以上", "action": "安装 Maven 3.9+ 并设置 PATH 或 MAVEN_HOME。仅在后端需要重新编译且没有健康运行服务时作为阻断项。" },
+  "MySQL connection / service": { "name": "MySQL 连接与服务", "action": "安装并启动 MySQL 8.0，或配置正确的 MYSQL_HOST、MYSQL_PORT。本机 MySQL80 停止时，正式启动会尝试启动服务，权限不足需手动启动。" },
+  "Database account / schema": { "name": "数据库账号、版本及表结构（待验证）", "action": "端口可连接不代表数据库认证或表结构正确。核对自己的数据库与账号，通过后端启动及业务查询继续验证；不要为了通过检测重导有价值的数据库。" },
+  "MySQL command-line client": { "name": "MySQL 命令行客户端（可选）", "action": "导入 SQL 和诊断时建议安装，Java 后端连接数据库不依赖 mysql.exe 客户端。" },
+  "Visual Studio Code": { "name": "VS Code 前端源码编辑器", "action": "未检测到时可安装 VS Code，或使用其他源码编辑器；不会阻止项目运行。官网：https://code.visualstudio.com/" },
+  "IntelliJ IDEA": { "name": "IntelliJ IDEA 后端开发工具", "action": "可安装 IDEA Community/Ultimate 或其他 Java IDE，导入父 pom.xml。未安装 IDEA 不阻止运行 JAR。官网：https://www.jetbrains.com/idea/" },
+  "Git": { "name": "Git 源码版本管理", "action": "直接运行解压包不需要 Git；后续版本管理建议安装。官网：https://git-scm.com/" },
+  "Web browser": { "name": "浏览器", "action": "使用 Edge、Chrome 或 Firefox 查看系统；自定义路径或便携浏览器可能未被自动识别。" },
+  "Port 8001": { "name": "后端端口 8001", "action": "空闲时可启动；健康服务可复用；若被未知服务占用，先确认所属程序和日志，启动器不会强行结束进程。" },
+  "Port 5174": { "name": "前端端口 5174", "action": "空闲时可启动；健康页面可复用；若被未知服务占用，先确认所属程序，启动器不会强行结束进程。" },
+  "AI / Redis / IDE plugins": { "name": "AI、Redis 与 IDE 插件（可选/待验证）", "action": "AI 需自行配置有效 API，不影响普通业务启动；当前 Redis 非必需。IDEA 需选 JDK 17 并设置 --enable-preview；VS Code 推荐 Vue - Official。插件、许可证和 IDE 工程设置尚未自动验证。" },
+  ".env syntax": { "name": "环境配置文件格式", "action": "使用 NAME=value 格式，不执行 shell 表达式。为保护密码和 Key，不在报告展示错误原文。" }
+}

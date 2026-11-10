@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>智慧社区：本机环境检测报告</title>
+<style>
+body{font:15px/1.6 "Microsoft YaHei",sans-serif;color:#20292d;background:#fff;margin:24px auto;padding:0 20px;max-width:1300px}h1{font-size:24px}h2{font-size:18px}p{max-width:1000px}.summary{border-left:4px solid #187b58;padding:10px 16px;background:#f0f7f3}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid #d5dde0;padding:10px;text-align:left;vertical-align:top;overflow-wrap:anywhere}th{background:#eef2f4}td:nth-child(3){font-weight:bold}tr:has(td:nth-child(3):empty){display:none}@media(max-width:700px){table{display:block;overflow-x:auto}th,td{min-width:100px}body{margin:16px auto}}
+</style>
+<h1>智慧社区：本机环境检测报告</h1>
+<p>检测时间：{{TIME}}。这是软件与启动前置检查，不是全业务验收。不会自动安装软件、修改数据库或结束已有进程。</p>
+<p class="summary">需先处理的阻断项：<strong>{{BLOCKS}}</strong>；缺失工具或建议项：<strong>{{WARNINGS}}</strong>。</p>
+<p><strong>状态：</strong>OK＝检查通过；BLOCK＝缺失、版本不兼容或阻止当前启动；WARN＝建议安装/需处理但未必阻止启动；VERIFY＝仍需人工或启动后验证。<strong>分类：</strong>Runtime＝运行条件；Development＝源码开发工具；Optional＝可选功能。</p>
+<p>VS Code、IDEA、Git 不属于浏览器运行项目的必要条件，未检测到不阻止运行。Maven 在需要重新编译后端时才成为启动条件。未检测到可能是未安装，也可能安装在自定义/便携路径、未配置 PATH；请按实际路径与安装方式确认。</p>
+<h2>缺失、不兼容或需处理的项目</h2>
+<p>表格为空表示没有识别出缺失项或建议项。Name 为项目名称，Category 为分类，Status 为状态，Detail 为原始检测结果，Action 为处理方法。</p>
+{{ATTENTION}}
+<h2>全部检查结果</h2>
+{{ROWS}}
+<h2>检测范围说明</h2>
+<p>软件从 PATH、常见安装位置及部分 Windows 安装登记中查找；未遍历整个磁盘。不会读取或展示数据库密码、API Key。数据库端口可达不表示 MySQL 版本、账号权限和表结构已通过；前后端健康检查也不代替业务验收。IDE 的插件、许可证、Maven 下载网络及 IDEA 中选择的项目 SDK 需自行确认。</p>
+<p>如果运行条件满足，可继续使用 Start-Community.cmd。只查看本报告时双击 Check-Environment.cmd；该操作不编译、不启动项目或数据库。详细操作见压缩包 PACKAGE-README.md 及 docs/一键启动说明.md。</p>
+</html>
